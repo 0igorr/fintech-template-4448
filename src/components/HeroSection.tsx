@@ -57,7 +57,7 @@ const HeroSection = () => {
           <div className="bg-gradient-to-r from-slate-800/95 to-blue-800/95 backdrop-blur-md w-full border-b border-blue-400/20">
             <div className="flex items-center justify-between p-4 bg-gray-50">
               <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-ambar-500 shadow-lg">
+                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-ambar-500">
                   <div className="h-3 w-3 rounded-sm bg-white animate-pulse"></div>
                 </div>
                 <span className="font-semibold text-slate-950">Sistema de Gestão IA - CRM Inteligente</span>
@@ -131,8 +131,8 @@ const HeroSection = () => {
                 {/* Dashboard Header */}
                 <div className="flex items-center justify-between mb-6 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <h3 className="font-semibold text-white text-lg">Gestão de IA & CRM</h3>
-                    <span className="text-xs bg-gradient-to-r from-green-500 to-blue-500 text-white px-3 py-1 rounded-full font-medium shadow-lg animate-pulse">Online</span>
+                    <h3 className="font-semibold text-lg text-slate-950">Gestão de IA & CRM</h3>
+                    <span className="text-xs bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full font-medium shadow-lg animate-pulse">Online</span>
                   </div>
                   
                   <div className="flex items-center gap-2 flex-shrink-0">
