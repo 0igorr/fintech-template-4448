@@ -266,7 +266,7 @@ const AIManagementDashboard = () => {
                   </ChartContainer>
                   
                   <div className="space-y-3 flex-1 ml-6">
-                    {aiPerformanceData.map((ia, index) => <div key={index} className="flex items-center justify-between p-3 bg-gray-50 mx-0 rounded-md">
+                    {aiPerformanceData.map((ia, index) => <div key={index} className="flex items-center justify-between p-3 bg-gray-50 mx-0 rounded-sm">
                         <div className="flex items-center gap-3">
                           <div className="h-4 w-4 rounded-full" style={{
                         backgroundColor: ia.cor
