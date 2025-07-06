@@ -148,7 +148,7 @@ const HeroSection = () => {
                         <path d="M17 17L7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600 to-blue-600 shadow-lg hover:shadow-xl">Nova Automação</div>
+                    <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer bg-gradient-to-r from-orange-500 to-yellow-500 shadow-lg hover:shadow-xl">Nova Automação</div>
                   </div>
                 </div>
                 
