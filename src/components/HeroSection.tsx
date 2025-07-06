@@ -60,7 +60,7 @@ const HeroSection = () => {
                 <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-orange-500">
                   <div className="h-3 w-3 rounded-sm bg-white animate-pulse"></div>
                 </div>
-                <span className="font-semibold text-slate-950">Sistema de Gestão IA - CRM Inteligente</span>
+                <span className="font-semibold text-slate-950">Sistema 100% personalizado de Gestão IA</span>
               </div>
               
               <div className="flex items-center gap-3">
