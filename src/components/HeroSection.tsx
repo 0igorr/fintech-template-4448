@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import AIManagementDashboard from './AIManagementDashboard';
 import { Loader } from 'lucide-react';
+
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 300);
+
     return () => clearTimeout(timer);
   }, []);
-  return <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
+
+  return (
+    <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
       {/* Cosmic particle effect (background dots) */}
       <div className="absolute inset-0 cosmic-grid opacity-30"></div>
       
@@ -48,6 +53,16 @@ const HeroSection = () => {
         <div className="pt-6 text-sm text-muted-foreground">
           Sem cartão de crédito necessário • Teste gratuito de 14 dias
         </div>
+      </div>
+
+      {/* Título e Subtítulo do Sistema de Gestão IA */}
+      <div className={`w-full max-w-4xl mt-16 z-10 text-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          Tenha visão total da sua IA em ação
+        </h2>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto text-balance leading-relaxed">
+          Acompanhe cada conversa, meça resultados e monitore a performance em tempo real, com um painel criado sob medida para o seu negócio. Nada de sistemas prontos ou replicáveis, tenha um sistema de gestão exclusivo, com CRM integrado, desenvolvido do zero para a sua operação e suas necessidades.
+        </p>
       </div>
       
       {/* AI Management Dashboard com efeito glassmórfico */}
@@ -161,6 +176,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
