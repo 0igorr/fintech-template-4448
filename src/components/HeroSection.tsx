@@ -60,7 +60,7 @@ const HeroSection = () => {
                 <div className="h-8 w-8 rounded-md flex items-center justify-center bg-orange-600">
                   <div className="h-3 w-3 rounded-sm bg-white"></div>
                 </div>
-                <span className="text-slate-800 font-semibold">Pipeline de Vendas - CRM</span>
+                <span className="text-slate-800 font-semibold">Sistema de gestão - Minha IA</span>
               </div>
               
               <div className="flex items-center gap-3">
