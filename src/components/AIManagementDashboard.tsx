@@ -5,45 +5,112 @@ import { TrendingUp, TrendingDown, Users, MessageSquare, Bot, Zap, Eye, Target }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 // Dados simulados para os gráficos
-const conversationData = [
-  { time: '00:00', mensagens: 45, resolvidas: 42, pendentes: 3 },
-  { time: '04:00', mensagens: 32, resolvidas: 30, pendentes: 2 },
-  { time: '08:00', mensagens: 78, resolvidas: 71, pendentes: 7 },
-  { time: '12:00', mensagens: 95, resolvidas: 87, pendentes: 8 },
-  { time: '16:00', mensagens: 112, resolvidas: 105, pendentes: 7 },
-  { time: '20:00', mensagens: 67, resolvidas: 63, pendentes: 4 },
-];
-
-const clientData = [
-  { mes: 'Jan', novos: 120, ativos: 450, inativos: 80 },
-  { mes: 'Fev', novos: 145, ativos: 520, inativos: 75 },
-  { mes: 'Mar', novos: 189, ativos: 680, inativos: 65 },
-  { mes: 'Abr', novos: 234, ativos: 780, inativos: 58 },
-  { mes: 'Mai', novos: 278, ativos: 890, inativos: 52 },
-];
-
-const aiPerformanceData = [
-  { name: 'Atendimento', valor: 95, cor: '#10B981' },
-  { name: 'Vendas', valor: 87, cor: '#3B82F6' },
-  { name: 'Marketing', valor: 92, cor: '#8B5CF6' },
-  { name: 'Análise', valor: 89, cor: '#F59E0B' },
-];
-
+const conversationData = [{
+  time: '00:00',
+  mensagens: 45,
+  resolvidas: 42,
+  pendentes: 3
+}, {
+  time: '04:00',
+  mensagens: 32,
+  resolvidas: 30,
+  pendentes: 2
+}, {
+  time: '08:00',
+  mensagens: 78,
+  resolvidas: 71,
+  pendentes: 7
+}, {
+  time: '12:00',
+  mensagens: 95,
+  resolvidas: 87,
+  pendentes: 8
+}, {
+  time: '16:00',
+  mensagens: 112,
+  resolvidas: 105,
+  pendentes: 7
+}, {
+  time: '20:00',
+  mensagens: 67,
+  resolvidas: 63,
+  pendentes: 4
+}];
+const clientData = [{
+  mes: 'Jan',
+  novos: 120,
+  ativos: 450,
+  inativos: 80
+}, {
+  mes: 'Fev',
+  novos: 145,
+  ativos: 520,
+  inativos: 75
+}, {
+  mes: 'Mar',
+  novos: 189,
+  ativos: 680,
+  inativos: 65
+}, {
+  mes: 'Abr',
+  novos: 234,
+  ativos: 780,
+  inativos: 58
+}, {
+  mes: 'Mai',
+  novos: 278,
+  ativos: 890,
+  inativos: 52
+}];
+const aiPerformanceData = [{
+  name: 'Atendimento',
+  valor: 95,
+  cor: '#10B981'
+}, {
+  name: 'Vendas',
+  valor: 87,
+  cor: '#3B82F6'
+}, {
+  name: 'Marketing',
+  valor: 92,
+  cor: '#8B5CF6'
+}, {
+  name: 'Análise',
+  valor: 89,
+  cor: '#F59E0B'
+}];
 const chartConfig = {
-  mensagens: { label: 'Mensagens', color: '#3B82F6' },
-  resolvidas: { label: 'Resolvidas', color: '#10B981' },
-  pendentes: { label: 'Pendentes', color: '#F59E0B' },
-  novos: { label: 'Novos', color: '#8B5CF6' },
-  ativos: { label: 'Ativos', color: '#10B981' },
-  inativos: { label: 'Inativos', color: '#EF4444' },
+  mensagens: {
+    label: 'Mensagens',
+    color: '#3B82F6'
+  },
+  resolvidas: {
+    label: 'Resolvidas',
+    color: '#10B981'
+  },
+  pendentes: {
+    label: 'Pendentes',
+    color: '#F59E0B'
+  },
+  novos: {
+    label: 'Novos',
+    color: '#8B5CF6'
+  },
+  ativos: {
+    label: 'Ativos',
+    color: '#10B981'
+  },
+  inativos: {
+    label: 'Inativos',
+    color: '#EF4444'
+  }
 };
-
 const AIManagementDashboard = () => {
   const [animatedValues, setAnimatedValues] = useState({
     totalClientes: 0,
     novasMensagens: 0,
     taxaResolucao: 0,
-    iaAtivas: 0,
+    iaAtivas: 0
   });
 
   // Animação dos números
@@ -52,36 +119,29 @@ const AIManagementDashboard = () => {
       totalClientes: 1247,
       novasMensagens: 324,
       taxaResolucao: 94,
-      iaAtivas: 8,
+      iaAtivas: 8
     };
-
     const duration = 2000;
     const steps = 60;
     const increment = duration / steps;
-
     let currentStep = 0;
     const timer = setInterval(() => {
       currentStep++;
       const progress = currentStep / steps;
-      
       setAnimatedValues({
         totalClientes: Math.floor(targets.totalClientes * progress),
         novasMensagens: Math.floor(targets.novasMensagens * progress),
         taxaResolucao: Math.floor(targets.taxaResolucao * progress),
-        iaAtivas: Math.floor(targets.iaAtivas * progress),
+        iaAtivas: Math.floor(targets.iaAtivas * progress)
       });
-
       if (currentStep >= steps) {
         clearInterval(timer);
         setAnimatedValues(targets);
       }
     }, increment);
-
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
+  return <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
       {/* Métricas Principais */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {/* Total de Clientes */}
@@ -170,21 +230,21 @@ const AIManagementDashboard = () => {
                     <XAxis dataKey="time" stroke="#6B7280" />
                     <YAxis stroke="#6B7280" />
                     <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line 
-                      type="monotone" 
-                      dataKey="mensagens" 
-                      stroke="#3B82F6" 
-                      strokeWidth={2}
-                      dot={{ fill: '#3B82F6', strokeWidth: 2, r: 4 }}
-                      activeDot={{ r: 6, stroke: '#3B82F6', strokeWidth: 2, fill: '#1E40AF' }}
-                    />
-                    <Line 
-                      type="monotone" 
-                      dataKey="resolvidas" 
-                      stroke="#10B981" 
-                      strokeWidth={2}
-                      dot={{ fill: '#10B981', strokeWidth: 2, r: 4 }}
-                    />
+                    <Line type="monotone" dataKey="mensagens" stroke="#3B82F6" strokeWidth={2} dot={{
+                    fill: '#3B82F6',
+                    strokeWidth: 2,
+                    r: 4
+                  }} activeDot={{
+                    r: 6,
+                    stroke: '#3B82F6',
+                    strokeWidth: 2,
+                    fill: '#1E40AF'
+                  }} />
+                    <Line type="monotone" dataKey="resolvidas" stroke="#10B981" strokeWidth={2} dot={{
+                    fill: '#10B981',
+                    strokeWidth: 2,
+                    r: 4
+                  }} />
                   </LineChart>
                 </ChartContainer>
               </div>
@@ -198,36 +258,23 @@ const AIManagementDashboard = () => {
                 <div className="flex items-center justify-between">
                   <ChartContainer config={chartConfig} className="h-[200px] w-[200px]">
                     <PieChart>
-                      <Pie
-                        data={aiPerformanceData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
-                        paddingAngle={5}
-                        dataKey="valor"
-                      >
-                        {aiPerformanceData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.cor} />
-                        ))}
+                      <Pie data={aiPerformanceData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="valor">
+                        {aiPerformanceData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.cor} />)}
                       </Pie>
                       <ChartTooltip content={<ChartTooltipContent />} />
                     </PieChart>
                   </ChartContainer>
                   
                   <div className="space-y-3 flex-1 ml-6">
-                    {aiPerformanceData.map((ia, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
+                    {aiPerformanceData.map((ia, index) => <div key={index} className="flex items-center justify-between p-3 bg-gray-50 mx-0 rounded-md">
                         <div className="flex items-center gap-3">
-                          <div 
-                            className="h-4 w-4 rounded-full" 
-                            style={{ backgroundColor: ia.cor }}
-                          ></div>
+                          <div className="h-4 w-4 rounded-full" style={{
+                        backgroundColor: ia.cor
+                      }}></div>
                           <span className="text-gray-700 font-medium">{ia.name}</span>
                         </div>
                         <span className="text-gray-900 text-lg font-bold">{ia.valor}%</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -244,22 +291,8 @@ const AIManagementDashboard = () => {
                     <XAxis dataKey="mes" stroke="#6B7280" />
                     <YAxis stroke="#6B7280" />
                     <ChartTooltip content={<ChartTooltipContent />} />
-                    <Area 
-                      type="monotone" 
-                      dataKey="novos" 
-                      stackId="1"
-                      stroke="#8B5CF6" 
-                      fill="#8B5CF6"
-                      fillOpacity={0.6}
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="ativos" 
-                      stackId="1"
-                      stroke="#10B981" 
-                      fill="#10B981"
-                      fillOpacity={0.6}
-                    />
+                    <Area type="monotone" dataKey="novos" stackId="1" stroke="#8B5CF6" fill="#8B5CF6" fillOpacity={0.6} />
+                    <Area type="monotone" dataKey="ativos" stackId="1" stroke="#10B981" fill="#10B981" fillOpacity={0.6} />
                   </AreaChart>
                 </ChartContainer>
               </div>
@@ -271,29 +304,23 @@ const AIManagementDashboard = () => {
                   Status das IAs
                 </h3>
                 <div className="space-y-3">
-                  {aiPerformanceData.map((ia, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
+                  {aiPerformanceData.map((ia, index) => <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
                       <div className="flex items-center gap-3">
-                        <div 
-                          className="h-3 w-3 rounded-full animate-pulse" 
-                          style={{ backgroundColor: ia.cor }}
-                        ></div>
+                        <div className="h-3 w-3 rounded-full animate-pulse" style={{
+                      backgroundColor: ia.cor
+                    }}></div>
                         <span className="text-gray-700 font-medium">{ia.name}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="bg-gray-200 rounded-full h-2 w-16 overflow-hidden">
-                          <div 
-                            className="h-full transition-all duration-1000 ease-out"
-                            style={{ 
-                              width: `${ia.valor}%`, 
-                              backgroundColor: ia.cor 
-                            }}
-                          ></div>
+                          <div className="h-full transition-all duration-1000 ease-out" style={{
+                        width: `${ia.valor}%`,
+                        backgroundColor: ia.cor
+                      }}></div>
                         </div>
                         <span className="text-gray-900 text-sm font-medium">{ia.valor}%</span>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -321,8 +348,6 @@ const AIManagementDashboard = () => {
           </div>
         </TabsContent>
       </Tabs>
-    </div>
-  );
+    </div>;
 };
-
 export default AIManagementDashboard;

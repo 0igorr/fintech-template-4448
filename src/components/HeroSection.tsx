@@ -131,7 +131,7 @@ const HeroSection = () => {
                 {/* Dashboard Header */}
                 <div className="flex items-center justify-between mb-6 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <h3 className="font-semibold text-lg text-slate-950">Gestão de IA & CRM</h3>
+                    <h3 className="font-semibold text-lg text-slate-950 mx-[10px]">Gestão de IA & CRM</h3>
                     <span className="text-xs bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full font-medium shadow-lg animate-pulse">Online</span>
                   </div>
                   
