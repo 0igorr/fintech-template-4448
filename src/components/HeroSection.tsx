@@ -1,21 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import AIManagementDashboard from './AIManagementDashboard';
 import { Loader } from 'lucide-react';
-
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 300);
     return () => clearTimeout(timer);
   }, []);
-
-  return (
-    <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
+  return <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
       {/* Cosmic particle effect (background dots) */}
       <div className="absolute inset-0 cosmic-grid opacity-30"></div>
       
@@ -60,12 +55,12 @@ const HeroSection = () => {
         <div className="relative rounded-xl overflow-hidden border border-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm bg-gradient-to-br from-slate-900/90 to-blue-900/80 shadow-2xl shadow-blue-500/10">
           {/* Dashboard Header */}
           <div className="bg-gradient-to-r from-slate-800/95 to-blue-800/95 backdrop-blur-md w-full border-b border-blue-400/20">
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between p-4 bg-gray-50">
               <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
+                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-ambar-500 shadow-lg">
                   <div className="h-3 w-3 rounded-sm bg-white animate-pulse"></div>
                 </div>
-                <span className="text-white font-semibold">Sistema de Gestão IA - CRM Inteligente</span>
+                <span className="font-semibold text-slate-950">Sistema de Gestão IA - CRM Inteligente</span>
               </div>
               
               <div className="flex items-center gap-3">
@@ -132,7 +127,7 @@ const HeroSection = () => {
               </div>
               
               {/* Main Dashboard Content */}
-              <div className="flex-1 p-4 bg-gradient-to-br from-slate-900/60 to-blue-900/40 backdrop-blur-sm overflow-hidden">
+              <div className="bg-gray-50">
                 {/* Dashboard Header */}
                 <div className="flex items-center justify-between mb-6 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -166,8 +161,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
