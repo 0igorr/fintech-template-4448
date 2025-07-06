@@ -1,22 +1,19 @@
+
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+
 const Testimonials = () => {
-  const testimonials = [{
-    quote: "Our payment processing efficiency increased by 40% and transaction failures dropped to near zero. The automation features are game-changing.",
-    author: "Sarah Johnson",
-    position: "CFO at TechCorp",
-    avatar: "bg-cosmic-light/30"
-  }, {
-    quote: "The real-time analytics and fraud detection capabilities have saved us millions. We can spot issues before they become problems.",
-    author: "Michael Chen",
-    position: "Head of Risk at FinanceFlow",
-    avatar: "bg-cosmic-light/20"
-  }, {
-    quote: "Compliance used to be a nightmare. Now our regulatory reporting is automated and we're always audit-ready.",
-    author: "Leila Rodriguez",
-    position: "Operations Director at GlobalPay",
-    avatar: "bg-cosmic-light/40"
-  }];
-  return;
+  return (
+    <section className="py-20 px-6 md:px-12 bg-background">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-8">
+          Testimonials
+        </h2>
+        <p className="text-muted-foreground">
+          Coming soon...
+        </p>
+      </div>
+    </section>
+  );
 };
+
 export default Testimonials;
