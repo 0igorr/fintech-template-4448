@@ -57,7 +57,7 @@ const HeroSection = () => {
           <div className="bg-gradient-to-r from-slate-800/95 to-blue-800/95 backdrop-blur-md w-full border-b border-blue-400/20">
             <div className="flex items-center justify-between p-4 bg-gray-50">
               <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-ambar-500">
+                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-orange-600 to-orange-500">
                   <div className="h-3 w-3 rounded-sm bg-white animate-pulse"></div>
                 </div>
                 <span className="font-semibold text-slate-950">Sistema de Gestão IA - CRM Inteligente</span>
