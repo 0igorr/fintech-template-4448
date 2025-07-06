@@ -1,16 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import TaskBoard from './TaskBoard';
+import AIManagementDashboard from './AIManagementDashboard';
 import { Loader } from 'lucide-react';
+
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 300);
     return () => clearTimeout(timer);
   }, []);
-  return <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
+
+  return (
+    <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
       {/* Cosmic particle effect (background dots) */}
       <div className="absolute inset-0 cosmic-grid opacity-30"></div>
       
@@ -50,113 +55,119 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* CRM Demo UI com efeito glassmórfico */}
+      {/* AI Management Dashboard com efeito glassmórfico */}
       <div className={`w-full max-w-7xl mt-12 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-        <div className="relative rounded-xl overflow-hidden border border-blue-200/30 backdrop-blur-sm bg-gradient-to-br from-blue-50/80 to-indigo-50/80 shadow-xl shadow-blue-100/50">
-          {/* CRM Header */}
-          <div className="bg-white/90 backdrop-blur-md w-full border-b border-blue-100/50">
+        <div className="relative rounded-xl overflow-hidden border border-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm bg-gradient-to-br from-slate-900/90 to-blue-900/80 shadow-2xl shadow-blue-500/10">
+          {/* Dashboard Header */}
+          <div className="bg-gradient-to-r from-slate-800/95 to-blue-800/95 backdrop-blur-md w-full border-b border-blue-400/20">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-orange-600">
-                  <div className="h-3 w-3 rounded-sm bg-white"></div>
+                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
+                  <div className="h-3 w-3 rounded-sm bg-white animate-pulse"></div>
                 </div>
-                <span className="text-slate-800 font-semibold">Sistema de gestão - Minha IA</span>
+                <span className="text-white font-semibold">Sistema de Gestão IA - CRM Inteligente</span>
               </div>
               
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  <div className="h-8 w-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-xs font-medium text-blue-600">JS</div>
-                  <div className="h-8 w-8 rounded-full bg-green-100 border-2 border-white flex items-center justify-center text-xs font-medium text-green-600">MF</div>
-                  <div className="h-8 w-8 rounded-full bg-purple-100 border-2 border-white flex items-center justify-center text-xs font-medium text-purple-600">AR</div>
-                  <div className="h-8 w-8 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center text-xs text-orange-600 font-medium">+5</div>
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-r from-green-400 to-blue-500 border-2 border-white flex items-center justify-center text-xs font-medium text-white shadow-lg">AI</div>
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 border-2 border-white flex items-center justify-center text-xs font-medium text-white shadow-lg">ML</div>
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-r from-orange-400 to-red-500 border-2 border-white flex items-center justify-center text-xs font-medium text-white shadow-lg">CRM</div>
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-r from-indigo-400 to-blue-600 border-2 border-white flex items-center justify-center text-xs text-white font-medium shadow-lg">+12</div>
                 </div>
                 
-                <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium bg-orange-600">
-                  Compartilhar
+                <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg hover:shadow-xl transition-all duration-300">
+                  Compartilhar Dashboard
                 </div>
               </div>
             </div>
             
-            {/* CRM Content */}
+            {/* Dashboard Content */}
             <div className="flex h-[600px] overflow-hidden">
               {/* Sidebar */}
-              <div className="w-64 border-r border-blue-100/50 p-4 space-y-4 hidden md:block bg-white/50">
+              <div className="w-64 border-r border-blue-400/20 p-4 space-y-4 hidden md:block bg-gradient-to-b from-slate-800/60 to-blue-900/40 backdrop-blur-sm">
                 <div className="space-y-2">
-                  <div className="text-xs text-slate-500 uppercase font-medium">Navegação</div>
+                  <div className="text-xs text-blue-300 uppercase font-medium tracking-wider">Central de IA</div>
                   <div className="space-y-1">
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-100/70 text-blue-800 font-medium">
-                      <div className="h-3 w-3 rounded-sm bg-orange-600"></div>
-                      <span>Pipeline</span>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-gradient-to-r from-blue-600/80 to-purple-600/60 text-white font-medium shadow-lg">
+                      <div className="h-3 w-3 rounded-sm bg-gradient-to-r from-green-400 to-blue-500 animate-pulse"></div>
+                      <span>Dashboard Principal</span>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-sm bg-slate-400"></div>
-                      <span>Relatórios</span>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-sm bg-blue-400"></div>
+                      <span>Relatórios IA</span>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-sm bg-slate-400"></div>
-                      <span>Clientes</span>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-sm bg-purple-400"></div>
+                      <span>Clientes CRM</span>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-sm bg-slate-400"></div>
-                      <span>Campanhas</span>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-sm bg-green-400"></div>
+                      <span>Automações</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="space-y-2 pt-4">
-                  <div className="text-xs text-slate-500 uppercase font-medium">IA'S EM TRABALHO</div>
+                  <div className="text-xs text-blue-300 uppercase font-medium tracking-wider">IA's Ativas</div>
                   <div className="space-y-1">
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
+                      <span>Atendimento</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-full bg-blue-400 animate-pulse"></div>
                       <span>Vendas</span>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-full bg-blue-400"></div>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-full bg-purple-400 animate-pulse"></div>
                       <span>Marketing</span>
                     </div>
-                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
-                      <div className="h-3 w-3 rounded-full bg-purple-400"></div>
-                      <span>Suporte</span>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-md text-blue-200 hover:bg-blue-800/40 transition-all duration-200">
+                      <div className="h-3 w-3 rounded-full bg-orange-400 animate-pulse"></div>
+                      <span>Análise</span>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Main Content */}
-              <div className="flex-1 p-4 bg-gradient-to-br from-white/80 to-blue-50/30 overflow-hidden">
-                {/* Board Header */}
+              {/* Main Dashboard Content */}
+              <div className="flex-1 p-4 bg-gradient-to-br from-slate-900/60 to-blue-900/40 backdrop-blur-sm overflow-hidden">
+                {/* Dashboard Header */}
                 <div className="flex items-center justify-between mb-6 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <h3 className="font-semibold text-slate-800">Oportunidades de Vendas</h3>
-                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">23</span>
+                    <h3 className="font-semibold text-white text-lg">Gestão de IA & CRM</h3>
+                    <span className="text-xs bg-gradient-to-r from-green-500 to-blue-500 text-white px-3 py-1 rounded-full font-medium shadow-lg animate-pulse">Online</span>
                   </div>
                   
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <div className="h-8 w-8 rounded-md bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors cursor-pointer">
+                    <div className="h-8 w-8 rounded-md bg-gradient-to-r from-blue-600/80 to-purple-600/60 flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 cursor-pointer">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 12H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                         <path d="M12 9L12 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     </div>
-                    <div className="h-8 w-8 rounded-md bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors cursor-pointer">
+                    <div className="h-8 w-8 rounded-md bg-gradient-to-r from-purple-600/80 to-pink-600/60 flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 cursor-pointer">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17 9L17 17H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M17 17L7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-colors cursor-pointer bg-orange-600">Adicionar novo cliente</div>
+                    <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer bg-gradient-to-r from-green-600 to-blue-600 shadow-lg hover:shadow-xl">Nova Automação</div>
                   </div>
                 </div>
                 
-                {/* Kanban Board */}
+                {/* AI Management Dashboard */}
                 <div className="overflow-hidden">
-                  <TaskBoard />
+                  <AIManagementDashboard />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
