@@ -57,7 +57,7 @@ const HeroSection = () => {
           <div className="bg-white/90 backdrop-blur-md w-full border-b border-blue-100/50">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md bg-blue-500 flex items-center justify-center">
+                <div className="h-8 w-8 rounded-md flex items-center justify-center bg-orange-600">
                   <div className="h-3 w-3 rounded-sm bg-white"></div>
                 </div>
                 <span className="text-slate-800 font-semibold">Pipeline de Vendas - CRM</span>
@@ -71,7 +71,7 @@ const HeroSection = () => {
                   <div className="h-8 w-8 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center text-xs text-orange-600 font-medium">+5</div>
                 </div>
                 
-                <div className="h-8 px-3 rounded-md bg-blue-500 text-white flex items-center justify-center text-sm font-medium">
+                <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium bg-orange-600">
                   Compartilhar
                 </div>
               </div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
                   <div className="text-xs text-slate-500 uppercase font-medium">Navegação</div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-100/70 text-blue-800 font-medium">
-                      <div className="h-3 w-3 rounded-sm bg-blue-500"></div>
+                      <div className="h-3 w-3 rounded-sm bg-orange-600"></div>
                       <span>Pipeline</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-slate-600 hover:bg-slate-100/50">
@@ -144,7 +144,7 @@ const HeroSection = () => {
                         <path d="M17 17L7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="h-8 px-3 rounded-md bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-colors cursor-pointer">Adicionar novo cliente</div>
+                    <div className="h-8 px-3 rounded-md text-white flex items-center justify-center text-sm font-medium whitespace-nowrap transition-colors cursor-pointer bg-orange-600">Adicionar novo cliente</div>
                   </div>
                 </div>
                 
